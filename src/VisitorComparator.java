@@ -4,18 +4,18 @@ public class VisitorComparator implements Comparator<Visitor> {
     
     @Override
     public int compare(Visitor v1, Visitor v2) {
-        // 第一排序条件：按姓名升序
+        // First sorting criteria: by name in ascending order
         int nameComparison = v1.getName().compareToIgnoreCase(v2.getName());
         if (nameComparison != 0) {
             return nameComparison;
         }
         
-        // 第二排序条件：按年龄升序（如果姓名相同）
+        // Second sorting criteria: by age in ascending order (if names are the same)
         return Integer.compare(v1.getAge(), v2.getAge());
     }
     
     @Override
     public String toString() {
-        return "VisitorComparator [按姓名升序，姓名相同时按年龄升序]";
+        return "VisitorComparator [sorted by name ascending, then by age ascending if names are equal]";
     }
 }
